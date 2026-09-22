@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ishaan Agarwal | Web Developer Portfolio</title>
+<style>
+    :root {
+        --navy: #0b2347;
+        --blue: #1765c1;
+        --yellow: #ffd400;
+        --light-blue: #eef6ff;
+        --gray-border: #e2e6ea;
+        --text-dark: #1a1a1a;
+        --text-muted: #4d4d4d;
+    }
+
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text-dark);
+        background-color: #ffffff;
+        line-height: 1.5;
+    }
+
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    ul {
+        list-style: none;
+    }
+
+    img {
+        max-width: 100%;
+        display: block;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 0 24px;
+    }
+
+    /* ---------- Header ---------- */
+    header {
+        background-color: var(--navy);
+        color: #ffffff;
+        padding: 18px 0;
+    }
+
+    .header-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+        gap: 16px;
+    }
+
+    .brand h1 {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .brand p {
+        font-size: 14px;
+        color: #cfd9ea;
+        margin-top: 2px;
+    }
+
+    nav ul {
+        display: flex;
+        gap: 32px;
+        flex-wrap: wrap;
+    }
+
+    nav a {
+        font-size: 16px;
+        font-weight: 600;
+        color: #ffffff;
+        padding-bottom: 6px;
+        border-bottom: 3px solid transparent;
+        transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    nav a:hover {
+        color: var(--yellow);
+    }
+
+    nav a.active {
+        color: var(--yellow);
+        border-bottom-color: var(--yellow);
+    }
+
+    /* ---------- Hero ---------- */
+    .hero {
+        background-color: var(--light-blue);
+        padding: 70px 0;
+    }
+
+    .hero-inner {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 40px;
+        flex-wrap: wrap;
+    }
+
+    .hero-text {
+        flex: 1 1 480px;
+    }
+
+    .hero-text h2 {
+        font-size: 40px;
+        color: var(--navy);
+        margin-bottom: 10px;
+        line-height: 1.2;
+    }
+
+    .hero-text .role {
+        font-size: 22px;
+        color: var(--blue);
+        font-weight: 700;
+        margin-bottom: 18px;
+    }
+
+    .hero-text p {
+        font-size: 16px;
+        color: var(--text-muted);
+        max-width: 500px;
+        margin-bottom: 28px;
+    }
+
+    .btn-download {
+        display: inline-block;
+        background-color: var(--navy);
+        color: #ffffff;
+        padding: 14px 28px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 15px;
+        border: none;
+        cursor: pointer;
+    }
+
+    .btn-download:hover {
+        background-color: #123a6b;
+    }
+
+    .hero-image {
+        flex: 0 0 auto;
+        display: flex;
+        justify-content: center;
+    }
+
+    .avatar-circle {
+        width: 260px;
+        height: 260px;
+        border-radius: 50%;
+        background: linear-gradient(135deg, var(--blue), var(--navy));
+        border: 8px solid #ffffff;
+        box-shadow: 0 10px 30px rgba(11, 35, 71, 0.25);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: #ffffff;
+        font-size: 72px;
+        font-weight: bold;
+        letter-spacing: 2px;
+    }
+
+    /* ---------- Section base ---------- */
+    section {
+        padding: 60px 0;
+    }
+
+    .section-heading {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        color: var(--blue);
+        font-size: 24px;
+        font-weight: 700;
+        margin-bottom: 18px;
+    }
+
+    .icon {
+        font-size: 22px;
+    }
+
+    /* ---------- Info grid: About / Skills / Education ---------- */
+    .info-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1.6fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .info-grid p {
+        color: var(--text-muted);
+        font-size: 15px;
+    }
+
+    .skills-list li {
+        position: relative;
+        padding-left: 18px;
+        margin-bottom: 8px;
+        font-size: 15px;
+        color: var(--text-dark);
+    }
+
+    .skills-list li::before {
+        content: "•";
+        color: var(--blue);
+        position: absolute;
+        left: 0;
+        font-weight: bold;
+    }
+
+    table.education-table {
+        width: 100%;
+        border-collapse: collapse;
+        font-size: 14px;
+    }
+
+    .education-table th,
+    .education-table td {
+        border: 1px solid var(--gray-border);
+        padding: 10px 12px;
+        text-align: left;
+    }
+
+    .education-table th {
+        background-color: var(--light-blue);
+        color: var(--navy);
+        font-weight: 700;
+    }
+
+    /* ---------- Projects ---------- */
+    .projects-section {
+        background-color: #fafbfc;
+    }
+
+    .projects-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+    }
+
+    .project-card {
+        background-color: #ffffff;
+        border: 1px solid var(--gray-border);
+        border-radius: 10px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+    }
+
+    .project-card h3 {
+        font-size: 16px;
+        color: var(--text-dark);
+        margin-bottom: 10px;
+    }
+
+    .project-card p {
+        font-size: 14px;
+        color: var(--text-muted);
+        margin-bottom: 14px;
+        min-height: 40px;
+    }
+
+    .project-card a {
+        color: var(--blue);
+        font-weight: 700;
+        font-size: 14px;
+    }
+
+    .project-card a:hover {
+        text-decoration: underline;
+    }
+
+    /* ---------- Lower area: Connect + Contact ---------- */
+    .lower-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: start;
+    }
+
+    .connect-icons {
+        display: flex;
+        gap: 14px;
+        margin-top: 6px;
+    }
+
+    .connect-icons a {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background-color: var(--navy);
+        color: #ffffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+    .connect-icons a:hover {
+        background-color: var(--blue);
+    }
+
+    /* ---------- Contact form ---------- */
+    .contact-form label {
+        display: block;
+        font-weight: 700;
+        font-size: 14px;
+        margin-bottom: 6px;
+        margin-top: 14px;
+        color: var(--text-dark);
+    }
+
+    .contact-form label:first-of-type {
+        margin-top: 0;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid var(--gray-border);
+        border-radius: 6px;
+        font-family: inherit;
+        font-size: 14px;
+        background-color: #fafbfc;
+    }
+
+    .contact-form textarea {
+        min-height: 100px;
+        resize: vertical;
+    }
+
+    .form-buttons {
+        display: flex;
+        gap: 12px;
+        margin-top: 18px;
+    }
+
+    .btn-send {
+        background-color: var(--navy);
+        color: #ffffff;
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .btn-send:hover {
+        background-color: #123a6b;
+    }
+
+    .btn-reset {
+        background-color: #e4e7eb;
+        color: var(--text-dark);
+        border: none;
+        padding: 12px 24px;
+        border-radius: 6px;
+        font-weight: 700;
+        font-size: 14px;
+        cursor: pointer;
+    }
+
+    .btn-reset:hover {
+        background-color: #d3d7dc;
+    }
+
+    /* ---------- Footer ---------- */
+    footer {
+        background-color: var(--navy);
+        color: #ffffff;
+        text-align: center;
+        padding: 24px 0;
+        font-size: 14px;
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 900px) {
+        .info-grid {
+            grid-template-columns: 1fr;
+            gap: 32px;
+        }
+
+        .projects-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .lower-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 700px) {
+        .header-inner {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        nav ul {
+            gap: 18px;
+        }
+
+        .hero-inner {
+            flex-direction: column-reverse;
+            text-align: center;
+        }
+
+        .hero-text p {
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-text h2 {
+            font-size: 30px;
+        }
+
+        .avatar-circle {
+            width: 180px;
+            height: 180px;
+            font-size: 50px;
+        }
+
+        .education-table {
+            display: block;
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <!-- ===== Header / Navigation ===== -->
+    <header>
+        <div class="container header-inner">
+            <div class="brand">
+                <h1>Ishaan Agarwal</h1>
+                <p>Web Developer</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#" class="active">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Skills</a></li>
+                    <li><a href="#">Education</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- ===== Hero Section ===== -->
+    <section class="hero">
+        <div class="container hero-inner">
+            <div class="hero-text">
+                <h2>Hi, I'm Ishaan Agarwal</h2>
+                <p class="role">Web Developer</p>
+                <p>I am a passionate web developer with a strong interest in building clean, responsive and user-friendly websites. I love turning ideas into real world applications.</p>
+                <a href="#" class="btn-download">Download CV</a>
+            </div>
+            <div class="hero-image">
+                <div class="avatar-circle">IA</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== About / Skills / Education ===== -->
+    <section>
+        <div class="container info-grid">
+            <div class="about-col">
+                <h2 class="section-heading"><span class="icon">&#128100;</span> About Me</h2>
+                <p>I am a quick learner and a team player. I enjoy solving problems and learning new technologies. My goal is to become a full stack developer and work on impactful projects.</p>
+            </div>
+
+            <div class="skills-col">
+                <h2 class="section-heading"><span class="icon">&lt;/&gt;</span> Skills</h2>
+                <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>Bootstrap</li>
+                    <li>Git &amp; GitHub</li>
+                    <li>Responsive Design</li>
+                </ul>
+            </div>
+
+            <div class="education-col">
+                <h2 class="section-heading"><span class="icon">&#127891;</span> Education</h2>
+                <table class="education-table">
+                    <thead>
+                        <tr>
+                            <th>Qualification</th>
+                            <th>Institute</th>
+                            <th>Year</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>B.Tech (CSE)</td>
+                            <td>ABC Engineering College</td>
+                            <td>2022</td>
+                            <td>8.6 CGPA</td>
+                        </tr>
+                        <tr>
+                            <td>12th (PCM)</td>
+                            <td>XYZ Public School</td>
+                            <td>2018</td>
+                            <td>85%</td>
+                        </tr>
+                        <tr>
+                            <td>10th</td>
+                            <td>XYZ Public School</td>
+                            <td>2016</td>
+                            <td>90%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Projects Section ===== -->
+    <section class="projects-section">
+        <div class="container">
+            <h2 class="section-heading"><span class="icon">&#128188;</span> Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <h3>1. Portfolio Website</h3>
+                    <p>A personal portfolio website built using HTML and Bootstrap.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>2. To-Do List App</h3>
+                    <p>A simple to-do list web app to add, remove and manage tasks.</p>
+                    <a href="#">View Project</a>
+                </div>
+                <div class="project-card">
+                    <h3>3. Weather App</h3>
+                    <p>A weather application that shows real-time weather using API.</p>
+                    <a href="#">View Project</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Connect + Contact ===== -->
+    <section>
+        <div class="container lower-grid">
+            <div class="connect-col">
+                <h2 class="section-heading"><span class="icon">&#128279;</span> Connect with me</h2>
+                <div class="connect-icons">
+                    <a href="#" title="LinkedIn">in</a>
+                    <a href="#" title="GitHub">GH</a>
+                    <a href="#" title="Gmail">@</a>
+                </div>
+            </div>
+
+            <div class="contact-col">
+                <h2 class="section-heading"><span class="icon">&#9993;</span> Contact Me</h2>
+                <form action="#" class="contact-form">
+                    <label for="name">Name</label>
+                    <input type="text" id="name" name="name" placeholder="Enter your name">
+
+                    <label for="email">Email</label>
+                    <input type="email" id="email" name="email" placeholder="Enter your email">
+
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" placeholder="Type your message..."></textarea>
+
+                    <div class="form-buttons">
+                        <button type="submit" class="btn-send">Send Message</button>
+                        <button type="reset" class="btn-reset">Reset</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== Footer ===== -->
+    <footer>
+        <p>&copy; 2024 Ishaan Agarwal. All Rights Reserved.</p>
+    </footer>
+
+</body>
+</html>

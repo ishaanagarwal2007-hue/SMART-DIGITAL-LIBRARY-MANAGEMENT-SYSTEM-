@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Student Marksheet</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: 'Segoe UI', Arial, sans-serif;
+    background: #eef1f5;
+    margin: 0;
+    padding: 40px 20px;
+  }
+  .sheet {
+    max-width: 650px;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
+    overflow: hidden;
+  }
+  .sheet-header {
+    background: #1f3b73;
+    color: #fff;
+    padding: 24px 30px;
+    text-align: center;
+  }
+  .sheet-header h1 {
+    margin: 0 0 4px;
+    font-size: 22px;
+    letter-spacing: 1px;
+  }
+  .sheet-header p {
+    margin: 0;
+    font-size: 13px;
+    color: #c7d2e8;
+  }
+  .student-info {
+    display: flex;
+    justify-content: space-between;
+    padding: 18px 30px;
+    background: #f7f9fc;
+    border-bottom: 1px solid #e0e4eb;
+    font-size: 14px;
+    flex-wrap: wrap;
+    gap: 6px;
+  }
+  .student-info div { min-width: 200px; }
+  .student-info span { color: #555; }
+  .student-info b { color: #1f3b73; }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 14px;
+  }
+  thead tr { background: #2c4e8c; color: #fff; }
+  th, td {
+    padding: 12px 16px;
+    text-align: left;
+  }
+  tbody tr:nth-child(even) { background: #f2f5fa; }
+  tbody tr:hover { background: #e7edf7; }
+  td.center, th.center { text-align: center; }
+  tfoot td {
+    font-weight: bold;
+    background: #dfe6f2;
+    border-top: 2px solid #1f3b73;
+  }
+  .result {
+    padding: 18px 30px;
+    text-align: center;
+    background: #e8f7ee;
+    color: #1c7a3e;
+    font-weight: bold;
+    font-size: 16px;
+    letter-spacing: 0.5px;
+  }
+</style>
+</head>
+<body>
+
+<div class="sheet">
+  <div class="sheet-header">
+    <h1>GREENFIELD PUBLIC SCHOOL</h1>
+    <p>Annual Examination Marksheet &mdash; 2026</p>
+  </div>
+
+  <div class="student-info">
+    <div><span>Student Name:</span> <b>Ishaan Sharma</b></div>
+    <div><span>Roll No:</span> <b>21</b></div>
+    <div><span>Class:</span> <b>XII - A</b></div>
+    <div><span>Date of Birth:</span> <b>14-06-2008</b></div>
+  </div>
+
+  <table>
+    <thead>
+      <tr>
+        <th>S.No.</th>
+        <th>Subject</th>
+        <th class="center">Max Marks</th>
+        <th class="center">Marks Obtained</th>
+        <th class="center">Grade</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>1</td>
+        <td>English</td>
+        <td class="center">100</td>
+        <td class="center">88</td>
+        <td class="center">A</td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td>Mathematics</td>
+        <td class="center">100</td>
+        <td class="center">92</td>
+        <td class="center">A+</td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td>Physics</td>
+        <td class="center">100</td>
+        <td class="center">85</td>
+        <td class="center">A</td>
+      </tr>
+      <tr>
+        <td>4</td>
+        <td>Chemistry</td>
+        <td class="center">100</td>
+        <td class="center">79</td>
+        <td class="center">B+</td>
+      </tr>
+      <tr>
+        <td>5</td>
+        <td>Computer Science</td>
+        <td class="center">100</td>
+        <td class="center">95</td>
+        <td class="center">A+</td>
+      </tr>
+    </tbody>
+    <tfoot>
+      <tr>
+        <td colspan="2">Total</td>
+        <td class="center">500</td>
+        <td class="center">439</td>
+        <td class="center">A</td>
+      </tr>
+    </tfoot>
+  </table>
+
+  <div class="result">Percentage: 87.8% &nbsp;|&nbsp; Result: PASS</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Restaurant Menu</title>
+<style>
+  * { box-sizing: border-box; }
+  body {
+    font-family: Georgia, 'Times New Roman', serif;
+    background: #2b1c14;
+    margin: 0;
+    padding: 40px 20px;
+    color: #f5ead9;
+  }
+  .menu {
+    max-width: 680px;
+    margin: 0 auto;
+    background: #3c2a1e;
+    border: 2px solid #c9a45c;
+    border-radius: 10px;
+    padding: 40px;
+  }
+  .menu-header {
+    text-align: center;
+    margin-bottom: 34px;
+  }
+  .menu-header h1 {
+    font-size: 34px;
+    color: #e8c884;
+    letter-spacing: 3px;
+    margin: 0 0 6px;
+  }
+  .menu-header p {
+    font-style: italic;
+    color: #c9b79b;
+    margin: 0;
+  }
+  .divider {
+    text-align: center;
+    color: #c9a45c;
+    margin: 30px 0 18px;
+    font-size: 13px;
+    letter-spacing: 4px;
+    text-transform: uppercase;
+  }
+  ul.menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  ul.menu-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px 0;
+    border-bottom: 1px dotted #6b5643;
+  }
+  .item-name {
+    font-size: 16.5px;
+    color: #f5ead9;
+  }
+  .item-desc {
+    display: block;
+    font-size: 12.5px;
+    color: #b7a487;
+    font-style: italic;
+    margin-top: 2px;
+  }
+  .item-price {
+    font-size: 16px;
+    color: #e8c884;
+    font-weight: bold;
+    white-space: nowrap;
+    margin-left: 16px;
+  }
+</style>
+</head>
+<body>
+
+<div class="menu">
+  <div class="menu-header">
+    <h1>SPICE HAVEN</h1>
+    <p>Fine Indian &amp; Continental Cuisine</p>
+  </div>
+
+  <div class="divider">&mdash; Starters &mdash;</div>
+  <ul class="menu-list">
+    <li>
+      <span class="item-name">Paneer Tikka<span class="item-desc">Cottage cheese marinated &amp; grilled with spices</span></span>
+      <span class="item-price">&#8377;220</span>
+    </li>
+    <li>
+      <span class="item-name">Chicken Seekh Kebab<span class="item-desc">Minced chicken skewers, smoky &amp; spiced</span></span>
+      <span class="item-price">&#8377;280</span>
+    </li>
+    <li>
+      <span class="item-name">Vegetable Spring Rolls<span class="item-desc">Crispy rolls served with sweet chilli dip</span></span>
+      <span class="item-price">&#8377;180</span>
+    </li>
+  </ul>
+
+  <div class="divider">&mdash; Main Course &mdash;</div>
+  <ul class="menu-list">
+    <li>
+      <span class="item-name">Butter Chicken<span class="item-desc">Creamy tomato gravy, a house specialty</span></span>
+      <span class="item-price">&#8377;340</span>
+    </li>
+    <li>
+      <span class="item-name">Paneer Butter Masala<span class="item-desc">Cottage cheese in rich buttery tomato sauce</span></span>
+      <span class="item-price">&#8377;300</span>
+    </li>
+    <li>
+      <span class="item-name">Vegetable Biryani<span class="item-desc">Basmati rice layered with fresh vegetables</span></span>
+      <span class="item-price">&#8377;260</span>
+    </li>
+    <li>
+      <span class="item-name">Dal Makhani<span class="item-desc">Slow cooked black lentils with cream</span></span>
+      <span class="item-price">&#8377;220</span>
+    </li>
+  </ul>
+
+  <div class="divider">&mdash; Desserts &mdash;</div>
+  <ul class="menu-list">
+    <li>
+      <span class="item-name">Gulab Jamun (2 pcs)<span class="item-desc">Soft milk dumplings in sugar syrup</span></span>
+      <span class="item-price">&#8377;120</span>
+    </li>
+    <li>
+      <span class="item-name">Chocolate Brownie with Ice Cream<span class="item-desc">Warm brownie topped with vanilla scoop</span></span>
+      <span class="item-price">&#8377;180</span>
+    </li>
+  </ul>
+
+  <div class="divider">&mdash; Beverages &mdash;</div>
+  <ul class="menu-list">
+    <li>
+      <span class="item-name">Masala Chai</span>
+      <span class="item-price">&#8377;60</span>
+    </li>
+    <li>
+      <span class="item-name">Fresh Lime Soda</span>
+      <span class="item-price">&#8377;90</span>
+    </li>
+    <li>
+      <span class="item-name">Cold Coffee</span>
+      <span class="item-price">&#8377;140</span>
+    </li>
+  </ul>
+</div>
+
+</body>
+</html>
